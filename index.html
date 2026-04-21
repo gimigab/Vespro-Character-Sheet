@@ -81,7 +81,7 @@ kbd{background:#fff;padding:4px 8px;border-radius:6px;border:1px solid rgba(0,0,
         <div class="small">PF Massimi</div>
         <div class="flex">
           <button class="inline-btn" id="hpMaxMinus">-</button>
-          <div class="big" id="hpMax">9</div>
+          <div class="big" id="hpMax">23</div>
           <button class="inline-btn" id="hpMaxPlus">+</button>
         </div>
 
@@ -91,7 +91,7 @@ kbd{background:#fff;padding:4px 8px;border-radius:6px;border:1px solid rgba(0,0,
         <div class="small">PF Attuali</div>
         <div class="flex">
           <button class="inline-btn" id="hpMinus">-</button>
-          <div class="big" id="hpCur">9</div>
+          <div class="big" id="hpCur">23</div>
           <button class="inline-btn" id="hpPlus">+</button>
         </div>
 
@@ -111,7 +111,7 @@ kbd{background:#fff;padding:4px 8px;border-radius:6px;border:1px solid rgba(0,0,
         <div class="small">Classe Armatura</div>
         <div class="flex">
           <button class="inline-btn" id="acMinus">-</button>
-          <div class="big" id="ac">10</div>
+          <div class="big" id="ac">15</div>
           <button class="inline-btn" id="acPlus">+</button>
         </div>
 
@@ -121,7 +121,7 @@ kbd{background:#fff;padding:4px 8px;border-radius:6px;border:1px solid rgba(0,0,
         <div class="small">Metamagia</div>
         <div class="flex">
           <button class="inline-btn" id="wildMinus">-</button>
-          <div class="big" id="wild">2</div>
+          <div class="big" id="wild">3</div>
           <button class="inline-btn" id="wildPlus">+</button>
         </div>
 
@@ -189,12 +189,12 @@ kbd{background:#fff;padding:4px 8px;border-radius:6px;border:1px solid rgba(0,0,
 const initial = {
   nome: "Vespro Cantatuono",
   classe: "Stregone Bronzeo",
-  livello: 1,
+  livello: 3,
   profBonus: 2,
-  stats: { Forza:8, Destrezza:14, Costituzione:14, Intelligenza:12, Saggezza:10, Carisma:16 },
-  hpMax:9, hpCur:9, thp:0, ac:10, wild:2, inspiration:0,
-  slots:{1:2,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0},
-  profs:{},
+  stats: { Forza:8, Destrezza:15, Costituzione:14, Intelligenza:10, Saggezza:10, Carisma:17 },
+  hpMax:23, hpCur:23, thp:0, ac:15, wild:3, inspiration:0,
+  slots:{1:4,2:2,3:0,4:0,5:0,6:0,7:0,8:0,9:0},
+  profs:{Acrobazia,Intuizione,Persuasione,Intrattenere},
   death:{succ:0,fail:0}
 };
 
@@ -477,16 +477,6 @@ function init(){
 }
 
 init();
-// autosave sicurezza mobile
-window.addEventListener("beforeunload", save);
-window.addEventListener("pagehide", save);
-window.addEventListener("visibilitychange", ()=>{
-  if(document.hidden) save();
-});
-
-// salva ogni 5 secondi
-setInterval(save, 5000);
-
 </script>
 </body>
 </html>
